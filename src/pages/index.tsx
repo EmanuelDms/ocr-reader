@@ -50,7 +50,7 @@ export default function Home() {
       setError('Erro: ' + (err as Error).message);
     } finally {
       setIsProcessing(false);
-    }''
+    }
   };
 
   return (
