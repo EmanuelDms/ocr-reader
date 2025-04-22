@@ -1,5 +1,6 @@
-import { useState } from 'react';
 import Head from 'next/head';
+import Image from 'next/image';
+import { useState } from 'react';
 
 export default function Home() {
   const [imagePreview, setImagePreview] = useState<string | null>(null);
@@ -70,7 +71,7 @@ export default function Home() {
           style={{ display: 'none' }}
         />
         {imagePreview ? (
-          <img src={imagePreview} alt="Pré-visualização" className="preview" />
+          <Image src={imagePreview} alt="Pré-visualização" className="preview" />
         ) : (
           <p>Clique para selecionar uma imagem ou arraste aqui</p>
         )}
