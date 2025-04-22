@@ -1,9 +1,9 @@
-// @ts-nocheck
+// @ts-check
+import multer from 'multer';
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { createRouter } from 'next-connect';
 import { createWorker } from 'tesseract.js';
 import * as XLSX from 'xlsx';
-import multer from 'multer';
-import { createRouter } from 'next-connect';
 
 export const config = {
   api: {
@@ -59,7 +59,7 @@ router.post(async (req, res) => {
 
 export default router.handler({
   onError: (err, req, res) => {
-    console.error(err.stack);
-    res.status(err.statusCode || 500).end(err.message);
+    console.error(err);
+    res.status(500).end(err);
   },
 });
